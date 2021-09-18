@@ -513,14 +513,6 @@ var Removables = class DashToDock_Removables {
             icon = icon.get_icon();
         }
         if (icon instanceof Gio.ThemedIcon) {
-            const { iconTheme } = Docking.DockManager.getDefault();
-            let names = icon.get_names();
-            for (let i = 0; i < names.length; i++) {
-                let iconName = names[i];
-                if (iconTheme.has_icon(iconName)) {
-                    return iconName;
-                }
-            }
             return '';
         } else {
             return icon.to_string();
